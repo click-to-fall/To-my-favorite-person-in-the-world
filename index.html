@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Cairo",sans-serif;
+}
+
+body{
+  background:
+  radial-gradient(circle at top,#2d3250 0%,#1b1f35 45%,#111425 100%);
+  color:white;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* PASSWORD SCREEN */
+
+.password-screen,
+.game-screen{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.password-box{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:28px;
+  padding:35px 25px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+.password-box h1{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.password-box p{
+  color:#d8d8d8;
+  margin-bottom:25px;
+  line-height:1.9;
+  font-size:1rem;
+}
+
+input{
+  width:100%;
+  padding:15px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  margin-bottom:15px;
+  background:white;
+  font-size:1rem;
+  text-align:center;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  color:white;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+}
+
+/* GAME SCREEN */
+
+.game-screen{
+  display:none;
+  position:relative;
+  overflow:hidden;
+}
+
+.game-area{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.counter{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,0.12);
+  padding:12px 24px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  font-size:1.1rem;
+  font-weight:700;
+  z-index:10;
+  text-align:center;
+  width:max-content;
+  max-width:90%;
+}
+
+.hat{
+  position:absolute;
+  font-size:3rem;
+  cursor:pointer;
+  user-select:none;
+  transition:0.2s;
+  animation:float 2s ease-in-out infinite;
+}
+
+.hat:hover{
+  transform:scale(1.2);
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* WEBSITE */
+
+.website{
+  display:none;
+  padding:30px 15px 60px;
+  overflow-x:hidden;
+  overflow-y:auto;
+  min-height:100vh;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+  margin-bottom:40px;
+  animation:fadeIn 1.3s ease;
+}
+
+.hero h1{
+  font-size:clamp(2rem,6vw,4rem);
+  margin-bottom:20px;
+  line-height:1.4;
+}
+
+.hero p{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+  padding:25px;
+  line-height:2.1;
+  color:#ececec;
+  font-size:clamp(1rem,2.8vw,1.2rem);
+  backdrop-filter:blur(12px);
+}
+
+/* MUSIC */
+
+.music-box{
+  display:flex;
+  justify-content:center;
+  margin:25px auto 50px;
+}
+
+.music-btn{
+  width:auto;
+  padding:16px 28px;
+  border:none;
+  border-radius:20px;
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  color:white;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.music-btn:hover{
+  transform:scale(1.05);
+}
+
+/* GALLERY */
+
+.gallery{
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  padding:0 10px;
+}
+
+.photo-frame{
+  width:100%;
+  background:white;
+  padding:12px;
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.35);
+  transition:0.35s;
+  overflow:hidden;
+}
+
+.photo-frame:hover{
+  transform:translateY(-5px);
+}
+
+.photo-frame img,
+.photo-frame video{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
+
+.caption{
+  text-align:center;
+  color:#222;
+  margin-top:14px;
+  font-size:1rem;
+  font-weight:700;
+  line-height:1.8;
+  word-wrap:break-word;
+}
+
+.footer{
+  text-align:center;
+  margin-top:70px;
+  color:#d1d1d1;
+  font-size:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .website{
+    padding:20px 12px 50px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:0;
+  }
+
+  .photo-frame{
+    padding:10px;
+    border-radius:14px;
+  }
+
+  .photo-frame img,
+  .photo-frame video{
+    height:auto;
+    max-height:420px;
+  }
+
+  .caption{
+    font-size:0.9rem;
+    line-height:1.7;
+    margin-top:12px;
+  }
+
+  .hat{
+    font-size:2.5rem;
+  }
+
+  .counter{
+    font-size:0.95rem;
+    padding:10px 18px;
+  }
+
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SONG -->
+
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSWORD SCREEN -->
+
+<div class="password-screen" id="passwordScreen">
+
+  <div class="password-box">
+
+    <h1>❤️</h1>
+
+    <p>
+      ادخل الباسورد عشان تفتح المفاجأة ✨
+    </p>
+
+    <input
+    type="password"
+    id="passwordInput"
+    placeholder="الباسورد">
+
+    <button onclick="checkPassword()">
+      دخول
+    </button>
+
+  </div>
+
+</div>
+
+<!-- GAME SCREEN -->
+
+<div class="game-screen" id="gameScreen">
+
+  <div class="counter">
+    اضغط على قبعات التخرج 🎓
+    <span id="score">0</span>/5
+  </div>
+
+  <div class="game-area" id="gameArea"></div>
+
+</div>
+
+<!-- WEBSITE -->
+
+<div class="website" id="website">
+
+<section class="hero">
+
+<h1>
+مبروك التخرج يا حبيبي 🎓❤️
+</h1>
+
+<p>
+كتكوتي 😂♥️♥️♥️🐣 ايوا والله كتكوتي هتقولي جيم و مش جيم و ده منظر كتكوت ملكش دعوة انا شيفاك كتكوت يعم وه😂♥️♥️♥️🐣 كتكوتي كتكوتي كتكوتي كتكوتي 😂😂😂♥️♥️♥️♥️♥️🐣 
+عارفه ان عندك امتحانات و بتفكر كتير هتعمل ايه بعد التخرج و قلقان من انك متوصلش ل حلمك بس انت عارف ربنا عمره ما بيعمل حاجة وحشه و افتكر دايما 
+وان ليس للانسان الا ما سعى. وان سعيه سوف يرى. ثم  يجزاه الجزاء الاوفى ♥️♥️♥️🫂 انت دايما مطالب بالسعى و النتيجة بتاع ربنا وانت شطور و بتعمل اللي عليك و ان شاء الله ربنا هيديك علي قد كرمه مش علي قد تعبك علشان احنا مهما بنعمل برضو بيبقي في تقصير ف ان شاء الله ربنا هيديك علي قد كرمه و توصل ل كل حاجة بتحلم بيها ♥️♥️♥️🫂 بحبك ♥️♥️♥️🫂 اغلي من عيوني والله ♥️♥️♥️
+</p>
+
+</section>
+
+<!-- MUSIC BUTTON -->
+
+<div class="music-box">
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵 شغل الأغنية
+</button>
+
+</div>
+
+<!-- VIDEOS -->
+
+<section class="gallery">
+
+<div class="photo-frame">
+<video controls>
+<source src="vid1.mp4" type="video/mp4">
+</video>
+<div class="caption">
+حببت يكون ده اول فيديو  علشان دي اول اغنية قولتهالك هنا حد معاه بنسي مشاكلي و فعلا مش مجرد اغنية ♥️♥️🫂
+هنا حد معاه بنسي مشاكلي 🌏♥️♥️♥️🫂
+</div>
+</div>
+
+
+<div class="photo-frame">
+<video controls>
+<source src="image (1).mp4" type="video/mp4">
+</video>
+<div class="caption">
+💪🏻💪🏻💪🏻💪🏻💪🏻💪🏻💪🏻😉😉♥️♥️♥️♥️♥️
+</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (2).mp4" type="video/mp4">
+</video>
+<div class="caption">
+لعيب ابيوها 😂♥️♥️♥️♥️♥️</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (3).mp4" type="video/mp4">
+</video>
+<div class="caption">
+اجمل ما رأت عيوني والله ♥️♥️♥️♥️♥️</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (4).mp4" type="video/mp4">
+</video>
+<div class="caption">
+كبير البلد يعم💪🏻♥️♥️♥️</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (5).mp4" type="video/mp4">
+</video>
+<div class="caption">
+😉♥️♥️
+</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (6).mp4" type="video/mp4">
+</video>
+<div class="caption">
+انا مش عاوز غيرك ♥️♥️♥️♥️♥️♥️♥️🫂</div>
+</div>
+
+<div class="photo-frame">
+<video controls>
+<source src="image (7).mp4" type="video/mp4">
+</video>
+<div class="caption">
+7 مليار بس انت أعظم اختيااااار ♥️♥️♥️♥️♥️♥️🌏🌏</div>
+</div>
+
+
+
+</section>
+
+<br><br>
+
+<!-- PHOTOS -->
+
+    <section class="gallery">
+
+      <div class="photo-frame">
+        <img src="image (5).jpeg">
+        <div class="caption"> اكتر صورة مفضلة عندك وانت لسه بيبي فيس من غير دقن😂😂♥️♥️♥️ كيوت كيوت يعني 😂♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (6).jpeg">
+        <div class="caption"> عارف العيد و العيدية؟! انت الاتنين ♥️♥️♥️♥️🥹 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (7).jpeg">
+        <div class="caption"> 𝘚𝘦𝘯𝘪𝘰𝘳 2026 🎓♥️♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (8).jpeg">
+        <div class="caption"> HᥫME♥️🌏 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (9).jpeg">
+        <div class="caption"> مقدرش محطش دي انا اسفة😂😂😂😂😂😂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (10).jpeg">
+        <div class="caption"> ورفيقاً إن اختلفنا لا ينسَى الودَ بيننا .♥️♥️♥️🫂
+عموما عمري ما انساها♥️♥️♥️ </div>
+      </div>
+
+
+      <div class="photo-frame">
+        <img src="image (11).jpeg">
+        <div class="caption"> الكاريزما اللي حيلتي♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+      <div class="photo-frame">
+        <img src="image (12).jpeg">
+        <div class="caption"> يا صغنن اين الدقن؟؟ 😂😂😂 </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (13).jpeg">
+        <div class="caption"> احلي حد هيتخرج كده كده ♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (14).jpeg">
+        <div class="caption"> التحفة الفنية بذات نفسها ♥️♥️♥️♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (15).jpeg">
+        <div class="caption"> جددددددديييييي😂😂😂😂😂😂😂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (16).jpeg">
+        <div class="caption"> صورة ب عنوان انا طالع مع صحابك(ضرايري) 😒😒 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (17).jpeg">
+        <div class="caption"> عمدة ♥️♥️♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (18).jpeg">
+        <div class="caption"> و بعدين في الضحكة اللي ملهاش حل دي؟؟! 😭😭♥️♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (19).jpeg">
+        <div class="caption"> حبيب عمري♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+      <div class="photo-frame">
+        <img src="image (22).jpeg">
+        <div class="caption"> و اللي عنده ضحكة زي ديه😂😂♥️♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+      <div class="photo-frame">
+        <img src="image (21).jpeg">
+        <div class="caption"> عضلات بقا و كده 😂💪🏻♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (20).jpeg">
+        <div class="caption"> الناس اللي بتتخرج قبلي دي 😭😭😭😭😭 </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (23).jpeg">
+        <div class="caption"> اغلي من عنياااا و العيون تشهد عليا♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (24).jpeg">
+        <div class="caption"> المكان المفضل عندك بعدي انا طبعا 😒😂♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (25).jpeg">
+        <div class="caption"> واووووووو ♥️♥️♥️♥️💪🏻 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (26).jpeg">
+        <div class="caption"> حبيب عيوني يا ناااس😂😂♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (27).jpeg">
+        <div class="caption"> احلي حد في الدنيا ♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (28).jpeg">
+        <div class="caption"> بحبك ♥️♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (29).jpeg">
+        <div class="caption"> اول صورة في اول ترم في اخر سنة تعليم 🎓♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (30).jpeg">
+        <div class="caption"> My favorite person♥️♥️♥️🫂 </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (68).jpeg">
+        <div class="caption"> كبير البلد ☝🏻♥️♥️♥️♥️♥️🫂🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (69).jpeg">
+        <div class="caption"> انا من غيرك بتوه توهان ♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (70).jpeg">
+        <div class="caption"> جمدان♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (71).jpeg">
+        <div class="caption"> التربية العسكرية و ايامها 😂😂😉♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (72).jpeg">
+        <div class="caption"> اللهم بارك اللهم بارك ♥️♥️♥️♥️♥️♥️😭 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (34).jpeg">
+        <div class="caption"> 𝑯𝒂𝒃𝒊𝒃iiii🌍♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (39).jpeg">
+        <div class="caption"> الجاكت اللي هاخده مهما حصل هاخده برضو 😒😒😒 </div>
+      </div>
+
+            <div class="photo-frame">
+        <img src="image (36).jpeg">
+        <div class="caption"> اول صورة ليك في جامعة المنيا لما روحت ل يوسف طبعا ده يوسف بقااااا 😡😡😡😡😡 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (38).jpeg">
+        <div class="caption"> يا حياتي علي البيبي فيس السكر ده 🐣🐣😂😂♥️♥️♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (37).jpeg">
+        <div class="caption"> الصورة اللي بموت فيها 🫂🫂♥️♥️♥️♥️ </div>
+      </div>
+            <div class="photo-frame">
+        <img src="image (45).jpeg">
+        <div class="caption"> فلفولي ♥️♥️♥️♥️🫂🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (79).jpeg">
+        <div class="caption"> صور قديمة ايام زمان كبرت و هتتخرج خلاص🎓🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (80).jpeg">
+        <div class="caption"> عمري عمري عمري♥️♥️🫂 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (81).jpeg">
+        <div class="caption"> يا حُبًا جاوز الحدُّ مداهُ ♥️ </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (82).jpeg">
+        <div class="caption"> كتكوتي 😂♥️♥️♥️♥️🐣 </div>
+      </div>
+
+
+            <div class="photo-frame">
+        <img src="image (83).jpeg">
+        <div class="caption"> عسوووووووول♥️♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (84).jpeg">
+        <div class="caption"> ♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (85).jpeg">
+        <div class="caption">لعيييييب ♥️♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (86).jpeg">
+        <div class="caption"> الحلقه اللي هتحلقه قريب ان شاء الله ♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (87).jpeg">
+        <div class="caption"> القميص البينك كيوت كيوت 😉😉😂😂😂😂♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (88).jpeg">
+        <div class="caption"> صورة ب عنون(عقبال ما اجبلك ورد يا حب) عموما انا بحب الورد ايوا بس بحبك انت اكتر بكتتتتتتتتييييير♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (89).jpeg">
+        <div class="caption"> بتاكل الحديد مش بتلعب بيه😂😂😂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (90).jpeg">
+        <div class="caption"> يديني ع الحلاوة بجد ♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (91).jpeg">
+        <div class="caption"> القميص السكر ( اي حاجة انت اللي بتحليها عموما ) ♥️♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (92).jpeg">
+        <div class="caption"> ❤️🦅 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (93).jpeg">
+        <div class="caption"> زعيم عصابة والله 😂  </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (94).jpeg">
+        <div class="caption"> الجاكت اللي هاخده برضو 🫡😒 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (95).jpeg">
+        <div class="caption"> الطقم الاقرب ل قلبي و هيفضل الطقم المفضل اللي بحبه جدا و ليه ذكرة مميزة عندي♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (96).jpeg">
+        <div class="caption"> اول صورة شوفتها ليك و قولت عليك تحسه كيوت كده 😂😂😂♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (97).jpeg">
+        <div class="caption"> نن عين منة ♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (98).jpeg">
+        <div class="caption"> هتفضل اغلي و اقرب حد ليا ♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (99).jpeg">
+        <div class="caption"> مش حبيبي بس انت صاحبي و كل حاجة ليا ♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (100).jpeg">
+        <div class="caption"> كلمة بحبك قليلة عليك ♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (101).jpeg">
+        <div class="caption"> اول ما بشوفها لساني تلقائي بيقول ما شاء الله اللهم بارك ♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (102).jpeg">
+        <div class="caption"> و دي كمان والله اللهم بارك بجد ♥️♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (103).jpeg">
+        <div class="caption"> استفزك؟؟؟! 
+كتكوتي كتكوتي كتكوتي 😂😂😂♥️♥️♥️♥️♥️♥️♥️🐣🐣🐣 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (1).jpeg">
+        <div class="caption"> حتي في التغفيلة زي السككككررر😭😭♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (2).jpeg">
+        <div class="caption">باشا البلد☝🏻🫡♥️♥️♥️🦅  </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (3).jpeg">
+        <div class="caption"> اقرب ليا من نفسي ♥️♥️♥️♥️🫂 </div>
+      </div>
+
+
+
+            <div class="photo-frame">
+        <img src="image (4).jpeg">
+        <div class="caption"> يعمري ع العسل 😭😭♥️♥️♥️♥️♥️♥️♥️ </div>
+      </div>
+
+
+
+</section>
+
+<div class="footer"></div>
+
+</div>
+
+<script>
+
+let score = 0;
+
+function checkPassword(){
+
+const password =
+document.getElementById("passwordInput").value;
+
+if(password === "30/6/2025"){
+
+document.getElementById("passwordScreen").style.display = "none";
+
+document.getElementById("gameScreen").style.display = "flex";
+
+createHats();
+
+}else{
+
+alert("الباسورد غلط ❤️");
+
+}
+
+}
+
+function createHats(){
+
+const gameArea =
+document.getElementById("gameArea");
+
+const isMobile =
+window.innerWidth <= 600;
+
+for(let i = 0; i < 5; i++){
+
+const hat =
+document.createElement("div");
+
+hat.classList.add("hat");
+
+hat.innerHTML = "🎓";
+
+let topPosition;
+let leftPosition;
+
+if(isMobile){
+
+topPosition =
+Math.random() * 70 + 10;
+
+leftPosition =
+Math.random() * 70 + 10;
+
+}else{
+
+topPosition =
+Math.random() * 80 + 5;
+
+leftPosition =
+Math.random() * 85 + 5;
+
+}
+
+hat.style.top = topPosition + "%";
+hat.style.left = leftPosition + "%";
+
+hat.onclick = function(){
+
+hat.remove();
+
+score++;
+
+document.getElementById("score").innerText = score;
+
+if(score === 5){
+
+setTimeout(() => {
+
+document.getElementById("gameScreen").style.display = "none";
+
+document.getElementById("website").style.display = "block";
+
+document.body.style.overflow = "auto";
+
+},700);
+
+}
+
+};
+
+gameArea.appendChild(hat);
+
+}
+
+}
+
+function toggleMusic(){
+
+const music =
+document.getElementById("bgMusic");
+
+const btn =
+document.querySelector(".music-btn");
+
+if(music.paused){
+
+music.play();
+
+btn.innerHTML = "⏸️ وقف الأغنية";
+
+}else{
+
+music.pause();
+
+btn.innerHTML = "🎵 شغل الأغنية";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
